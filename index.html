@@ -1,0 +1,154 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+
+    <!-- Google FOnts -->
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- foundation icons -->
+    <link rel="stylesheet" href="foundation-icons/foundation-icons.css">
+  </head>
+  <body>
+  <!-- HEADER -->
+  <header class="nav-container">
+    <div class="nav-bar-row">
+        <div class="nav-bar-title">
+              <img src="img/logo.png" height="24" width="130" alt="">
+        </div>
+        <ul class="nav-bar-right">
+            <li><a class="hover-arrow" href="#">Home</a></li>
+            <li><i class="fi-italic"></i></li>
+            <li><a class="hover-arrow" href="#">About</a></li>
+            <li><i class="fi-italic"></i></li>
+            <li><a class="hover-arrow" href="#">Reference</a></li>
+            <li><i class="fi-italic"></i></li>
+            <li><a class="hover-arrow" href="#">Blog</a></li>
+            <li><i class="fi-italic"></i></li>
+            <li><a class="hover-arrow" href="#">Contact</a></li>
+          </ul>
+          <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle></button>
+          </div>
+    </div>
+
+  </header>
+
+  <nav class="mobile-menu">
+    <div class="menu-container">
+        <div class="top-bar" id="example-menu">
+          <div class="top-bar-right">
+             <ul class="menu vertical" class="dropdown menu" data-dropdown-menu>
+                <li><a class="hover-underline" href="#">About</a></li>
+                <li><a class="hover-underline" href="#">References</a></li>
+                <li><a class="hover-underline" href="#">Blog</a></li>
+                <li><a class="hover-underline" href="#">Contact</a></li>
+             </ul>
+         </div>
+      </div>
+    </div>
+  </nav>
+    
+    <!--END// HEADER -->
+
+    <!-- Featured Posts -->
+    
+    <section class="featured">
+      <div class="featured-post">
+        <div class="featured-post-text">
+          <div class="featured-post-title">
+            <h1>
+              <span>Can User Experience Be Beautiful? An Analysis Of Navigation In Portfolio Website</span>
+            </h1>
+          </div>
+          <div class="featured-post-article">
+            <p>This is a different take on Responsive Web design. elephant in the room; that is, how we can rely on media queries and <a href="#">breakpoints</a> without any concern for devices.</p>
+          </div>
+          <div class="featured-post-article">
+            <p>Let’s start our journey by looking at the online tools such as Responsive Design Testing, Responsive.is, Responsinator and BriCSS.
+            This article discusses how we can better.
+            <a href="#" class="featured-post-article-btn">more &#187;</a>
+            </p>
+          </div>
+        </div>
+        <div class="featured-post-video">
+          <iframe src="https://player.vimeo.com/video/60122989" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!--// END Featured Posts -->
+   
+    <!-- Pro Section -->
+
+    <section class="pro">
+      <div class="pro-item">
+        <div class="pro-item-icon">
+          <img src="img/icon-pie.png" height="24" width="24" alt="">
+        </div>
+        <h1>Marketing <span>Plans</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, ullam.</p>
+        <a href="#" class="pro-btn">more &#187;</a>
+      </div>
+      <div class="pro-item">
+        <div class="pro-item-icon">
+          <img src="img/icon-lab.png" height="24" width="24" alt="">
+        </div>
+        <h1>Creation <span>Lab</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, ullam.</p>
+        <a href="#" class="pro-btn">more &#187;</a>
+      </div>
+      <div class="pro-item">
+        <div class="pro-item-icon">
+          <img src="img/icon-code.png" height="24" width="24" alt="">
+        </div>
+        <h1>Responsive <span>Web</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, ullam.</p>
+        <a href="#" class="pro-btn">more &#187;</a>
+      </div>
+    </section>
+
+    <!--//END Pro Section -->
+
+    <!-- Footer -->
+
+    <footer class="footer">
+      <div class="footer-line">
+        <img src="img/pro-inline.png" height="2" width="940" alt="">
+      </div>
+      <div class="footer-copyright">
+        <p>&#169; mondedesign</p>
+      </div>
+      <ul class="footer-social-icon">
+        <li><a href="#"><img src="img/rss.svg" alt=""></a></li>
+        <li><a href="#"><img src="img/facebook.svg" alt=""></a></li>
+        <li><a href="#"><img src="img/twitter.svg" alt=""></a></li>
+      </ul>
+    </footer>
+
+    <!--//END Footer -->
+
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/what-input/what-input.js"></script>
+    <script src="bower_components/foundation-sites/dist/foundation.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- A lightweight, easy-to-use jQuery plugin for fluid width video embeds. -->
+    <script src="js/jquery.fitvids.js"></script>
+
+    <script>
+  $(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $(".featured-post-video").fitVids();
+  });
+</script>
+
+  </body>
+</html>

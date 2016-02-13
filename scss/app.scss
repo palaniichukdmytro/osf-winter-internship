@@ -1,0 +1,225 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+@import 'variables';
+@import 'custom-mixin';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-menu;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+body {
+  background: url('../img/main-bg.png');
+  font-family: $breeserif;
+  @include breakpoint(small only) {
+  	background: url('../img/main-bg.png');
+  }
+}
+.nav-bar-row, .mobile-menu, .featured-post, .pro, .footer {
+    @include flex-grid-row;
+    max-width: 62rem;
+}
+/* HEADER*/
+.nav-container{
+	background-color: $topbar-background;
+	padding: 1rem 0;
+    margin-bottom: 2.6rem;
+    @include breakpoint(medium only) {
+    	margin-bottom: 0;
+    }
+	.nav-bar-row {
+		.nav-bar-title{
+			@include flex-grid-column(2);
+			@include breakpoint(medium only) {
+			@include flex-grid-column(2, $grid-column-gutter);
+			@include grid-column-position(center);
+			}
+			@include breakpoint(small only) {
+				@include flex-grid-column(8, $grid-column-gutter);
+				@include grid-column-offset(1);
+			}
+		}
+		.nav-bar-right {
+			@include nav-menu;
+			a {@include nav-menu-link;}
+ 	        a:hover {color: $green;}
+ 	        i {font-size: 1.5rem;}
+			@include flex-grid-column(6);
+			@include grid-column-offset(4);
+			@include breakpoint(medium only) {
+			@include flex-grid-column(12, $grid-column-gutter);
+			@include grid-column-position(center);
+		}
+			@include breakpoint(small only) {display: none;}
+			.hover-arrow {@include hover-arrow;}
+			.hover-arrow:before {@include hover-arrow-before;}
+			.hover-arrow:hover:before {@include hover-arrow-before-hover;}
+		}
+	}
+}
+/*menu dropdown mobile only*/
+.mobile-menu {
+	.menu-container {
+	display: none;
+	@include breakpoint (small only){
+	display: inline-block;
+	@include grid-column(10, $grid-column-gutter);
+	@include grid-column-position(center);
+	}
+	.top-bar {padding: 0;}
+	.top-bar, .top-bar ul {background-color: transparent;}
+	.vertical {
+        a {@include vertical-menu-link;}
+		a:hover, a:active {color: $green;}
+		.hover-underline {@include hover-underline;}
+		.hover-underline:before {@include hover-under-line-before;}
+		.hover-underline:hover:before, .hover-underline:focus:before, .hover-underline:active:before {right:0;}
+		}
+	}
+}
+/*Featured Posts*/
+.featured {
+	background-image: url('../img/featured-bg.png');
+	background-repeat: repeat-x;
+	background-position: center;
+	width: 100%;
+	height: auto;
+	 padding-top: 1rem;
+    padding-bottom: 1rem;
+	@include breakpoint(medium only) {
+		padding-top: 3rem;
+		background-position-y: -20%;
+	}
+	@include breakpoint(small only){background: transparent;}
+	.featured-post{
+		.featured-post-text {
+		   @include flex-grid-column(5);
+		   @include flex-grid-column-align(bottom);
+		   h1 {
+		   	@include posts-title;
+		   	span {@include post-title-span;}
+		   }
+		   p {background-color: $white; position: relative; font-family:$opensans;}
+		   .featured-post-article{
+		   	   .featured-post-article-btn {@include post-btn;}
+		   }
+		   @include breakpoint(medium down) {
+				@include flex-grid-column(8, $grid-column-gutter);
+				@include grid-column-position(center);
+				@include flex-grid-order(2);
+				margin-top: 1em;
+			}
+		   @include breakpoint(small only) {
+			    @include flex-grid-column(10, $grid-column-gutter);
+			}
+		}
+		.featured-post-video {
+		  @include grid-col-off(1);
+		  @include flex-grid-column(6);
+		  @include flex-grid-column-align(middle);
+		  @include breakpoint(medium down) {
+				@include flex-grid-column(8, $grid-column-gutter);
+				@include grid-column-position(center);
+				@include flex-grid-order(1);
+			}
+		@include breakpoint(small only) {
+			@include flex-grid-column(10, $grid-column-gutter);
+			}
+		}
+	}
+}
+
+/*PRO*/
+.pro {
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	.pro-item {
+	@include grid-column(4);
+	text-align: center;
+    margin-bottom: 2rem;
+	h1 {
+		@include pro-title;
+		span {color: $green;}
+	}
+	p {font-family:$opensans;}
+	.pro-btn {@include pro-btn;}
+	@include breakpoint(medium only) {
+          @include grid-column(8);
+          @include grid-column-position(center);
+	}
+	@include breakpoint(small only) {
+			@include grid-column(10, $grid-column-gutter);
+			@include grid-column-position(center);
+		}
+	 }
+}
+
+/*footer*/
+.footer{
+	padding-bottom: 5rem;
+	.footer-line {
+		@include grid-column(12);
+		@include breakpoint(medium only) {
+          @include grid-column(8);
+          @include grid-column-position(center);
+	}
+	@include breakpoint(small only) {
+			@include grid-column(10, $grid-column-gutter);
+			@include grid-column-position(center);
+	}
+	}
+	.footer-copyright {
+		@include flex-grid-column(2);
+		p {@include footer-copyright;}
+		@include breakpoint (medium down) {display: none;}
+	}
+	.footer-social-icon{
+		@include footer-social-icon;
+		@include flex-grid-column(6);
+		@include grid-column-offset(4);
+		img {max-width: 2rem;}
+		@include breakpoint(medium down) {
+		@include flex-grid-column(12, $grid-column-gutter);
+		@include grid-column-position(center);
+		justify-content: center;
+		}
+	}
+}
